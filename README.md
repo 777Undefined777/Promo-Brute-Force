@@ -4,4 +4,4 @@ Intentando código: 0000000000
 Código 0000000000 no válido.
 ...
 ¡Código exitoso encontrado: 1234567890!
-El ataque de fuerza bruta ha terminado.
+
