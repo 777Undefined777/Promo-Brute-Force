@@ -21,12 +21,14 @@ code_queue = queue.Queue()
 
 def check_code(code):
     try:
-        data = {"code": code}  # EJEMPLO DE CAMPO DE INPUT
+        data = {"code": code}  # Ejemplo de campo de input
         proxy = random.choice(proxies) if proxies else None
         response = session.post(url, data=data, proxies=proxy, timeout=10)
         
         if "Código válido" in response.text:
             print(f"¡Código exitoso encontrado: {code}!")
+            with open("codigosvalidos.txt", "a") as file:
+                file.write(code + "\n")
         else:
             print(f"Código {code} no válido.")
     except requests.RequestException as e:
